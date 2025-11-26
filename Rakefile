@@ -1,12 +1,28 @@
 # frozen_string_literal: true
 
 require "bundler/gem_tasks"
-require "minitest/test_task"
+require "rake/testtask"
 
-Minitest::TestTask.create
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList["test/**/test_*.rb"]
+  t.verbose = true
+end
 
-require "rubocop/rake_task"
+desc "Run tests with coverage"
+task :test_coverage do
+  ENV['COVERAGE'] = 'true'
+  Rake::Task[:test].invoke
+end
 
-RuboCop::RakeTask.new
+desc "Run specific test file"
+task :test_file, [:file] do |t, args|
+  if args[:file]
+    ruby "-Ilib:test #{args[:file]}"
+  else
+    puts "Usage: rake test_file[test/test_mets.rb]"
+  end
+end
 
-task default: %i[test rubocop]
+task default: :test
