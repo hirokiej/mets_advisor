@@ -1,28 +1,78 @@
-# MetsAdvisor
+# METsAdvisor
 
-TODO: Delete this and the text below, and describe your gem
+MetsAdvisor is a command-line tool that calculates your weekly METs (Metabolic Equivalents) based on your daily steps and exercise habits. It helps you determine whether you are getting enough physical activity for maintaining good health, and provides suggestions for improvement.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mets_advisor`. To experiment with that code, run `bin/console` for an interactive prompt.
+## What are METs?
+
+METs are Metabolic Equivalents.
+
+> METs (Metabolic Equivalents) are units used to express the intensity of physical activity.
+
+> “One MET is defined as the energy cost of sitting quietly…
+> moderate activity is about four times, and vigorous activity is about eight times higher.”
+> — WHO: Global Physical Activity Questionnaire (GPAQ) Analysis Guide
+> https://www.who.int/publications/i/item/9789240015128
+
+In short:
+
+- 1 MET = resting energy expenditure
+- 4 METs = moderate activity
+- 8 METs = vigorous activity
+
+METs are used worldwide to evaluate physical activity levels.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Install the gem:
 
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 ```
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+gem install mets_advisor
 ```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+mets_advisor
+```
+
+The tool will guide you through:
+
+1. Language selection
+2. Daily average steps
+3. Weekly exercise frequency
+4. Exercise intensity and type
+5. Daily exercise duration
+
+## Examples
+
+```
+Please select your language / 言語を選択してください
+→ 日本語
+  English
+  Français
+  Español
+```
+
+```
+Please select your language / 言語を選択してください: English
+
+What is your daily average steps per week?: 3000
+How many days per week do you exercise?: 2
+
+Choose the intensity of exercise you usually do: Moderate (e.g. brisk walking)
+
+Choose the activity that applies to you: Slow jogging
+How many minutes per day do you exercise in total?: 30
+
+🚨You are not getting enough exercise!🚨
+---------------------------------------------------
+Your physical activity is lacking by 【10 METs】.
+Increasing physical activity can reduce the risk of lifestyle diseases.
+💡Here is a guideline for the required weekly physical activity💡
+---------------------------------------------------
+🚶Walking(4 METs): 150+ min (avg 21 min/day)
+🏃Light Running(9 METs): 66+ min (avg 9 min/day)
+```
 
 ## Development
 
@@ -32,7 +82,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mets_advisor. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/mets_advisor/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/hirokiej/mets_advisor. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hirokiej/mets_advisor/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -40,4 +90,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the MetsAdvisor project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/mets_advisor/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the MetsAdvisor project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hirokiej/mets_advisor/blob/main/CODE_OF_CONDUCT.md).
