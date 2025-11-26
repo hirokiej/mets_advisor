@@ -13,6 +13,7 @@ module MetsAdvisor
     end
 
     def select(prompt, choices)
+      puts ''
       puts prompt
       display_choices(choices, initial: true)
       
