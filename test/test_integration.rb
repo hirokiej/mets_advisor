@@ -85,7 +85,7 @@ class TestIntegration < Minitest::Test
     output = capture_io { result.display }.join
     
     assert_match(/理想値を上回っています/, output)
-    assert_match(/Mets/, output)
+    assert_match(/METs/, output)
   end
 
   def test_edge_case_exactly_at_ideal_threshold
@@ -105,7 +105,7 @@ class TestIntegration < Minitest::Test
     result = MetsAdvisor::Result.new(21, i18n)
     output = capture_io { result.display }.join
     
-    assert_match /suitable for health maintenance/, output
+    assert_match(/suitable for health maintenance/, output)
   end
 
   def test_edge_case_exactly_at_insufficient_threshold
@@ -120,7 +120,6 @@ class TestIntegration < Minitest::Test
 
   def test_realistic_sedentary_lifestyle
     # 座りがちな生活: 2000歩/日、運動なし
-    i18n = MetsAdvisor::I18n.new('en')
     activity = create_activity_stub(steps: 2000, active_day: 0, intensity: 0, minutes: 0)
     
     mets = MetsAdvisor::Mets.new(
@@ -135,7 +134,6 @@ class TestIntegration < Minitest::Test
 
   def test_realistic_active_lifestyle
     # アクティブな生活: 12000歩/日 + 週6日60分のサイクリング
-    i18n = MetsAdvisor::I18n.new('en')
     activity = create_activity_stub(steps: 12000, active_day: 6, intensity: 8.0, minutes: 60)
     
     mets = MetsAdvisor::Mets.new(
