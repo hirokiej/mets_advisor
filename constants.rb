@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+module MetsAdvisor
+  DAILY_IDEAL_STEPS = 8000
+  STEP_METS = 3
+
+  HOURLY_MINUTES = 60
+  ONE_WEEK = 7
+
+  WEEKLY_IDEAL_METS = 23
+  SUFFICIENT_METS = 21
+  INSUFFICIENT_METS = 20
+  WALKING_METS = 4
+  RUNNING_METS = 9
+end
