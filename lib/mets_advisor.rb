@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require_relative "mets_advisor/version"
-require_relative 'activity'
-require_relative 'mets'
-require_relative 'result'
-require_relative 'i18n'
-require_relative 'selector'
+require_relative 'mets_advisor/activity'
+require_relative 'mets_advisor/mets'
+require_relative 'mets_advisor/result'
+require_relative 'mets_advisor/i18n'
+require_relative 'mets_advisor/selector'
 
 module MetsAdvisor
   def self.run
