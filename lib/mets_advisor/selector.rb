@@ -27,8 +27,10 @@ module MetsAdvisor
           @selected_index = (@selected_index + 1) % choices.length
           display_choices(choices)
         when ENTER
-          clear_choices(choices.length)
-          puts "#{prompt} #{choices[@selected_index]}"
+          print "\e[#{choices.length + 1}A"
+          print "\e[J"
+
+          puts "#{prompt}: #{choices[@selected_index]}"
           return @selected_index
         end
       end
