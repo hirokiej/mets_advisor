@@ -14,7 +14,7 @@ module MetsAdvisor
     # 言語選択
     locale_choices = I18n.available_locales.values
     locale_index = selector.select(
-      'Please select your language / 言語を選択してください:',
+      'Please select your language / 言語を選択してください',
       locale_choices
     )
     locale_choice = I18n.available_locales.keys[locale_index]
