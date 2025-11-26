@@ -14,7 +14,7 @@ module MetsAdvisor
 
     def select(prompt, choices)
       puts prompt
-      display_choices(choices)
+      display_choices(choices, initial: true)
       
       loop do
         key = read_key
@@ -54,8 +54,9 @@ module MetsAdvisor
 
     private
 
-    def display_choices(choices)
-      clear_choices(choices.length)
+    def display_choices(choices, initial: false)
+      clear_choices(choices.length) unless initial
+      
       choices.each_with_index do |choice, index|
         if index == @selected_index
           puts "→ \e[1m#{choice}\e[0m"  # 太字で表示
